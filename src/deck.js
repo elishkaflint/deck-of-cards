@@ -7,4 +7,7 @@ class Deck {
     return this.cards;
   }
 
+  shuffle() {
+  }
+
 }
