@@ -12,6 +12,17 @@ describe("UNIT TESTS: Deck", function() {
             return result;
           }
         }
+      },
+      toHaveNoDuplicateOutcomes: function(){
+        return {
+          compare: function(object){
+            var result = { pass: hasNoDuplicateOutcomes(object) };
+            if(result.pass){
+              result.message = 'Expected ' + object + ' to have no duplicate outcomes';
+            }
+            return result;
+          }
+        }
       }
     });
   });
@@ -28,6 +39,16 @@ describe("UNIT TESTS: Deck", function() {
       let deck = new Deck();
       deck.shuffle();
       expect(deck.getCards()).toHaveNoCardsInSequence();
+    });
+    it('Should generate a random outcome', function() {
+      let deck = new Deck();
+      let outcomes = [];
+      let numberOfRounds = 100;
+      for( i = 0; i < numberOfRounds; i++){
+        deck.shuffle();
+        outcomes.push(deck.getCards().join(","))
+      }
+      expect(outcomes).toHaveNoDuplicateOutcomes();
     });
   });
 
