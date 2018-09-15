@@ -35,12 +35,12 @@ describe("UNIT TESTS: Deck", function() {
   });
 
   describe('#shuffle', function() {
-    it('Can be shuffled out of sequence', function() {
+    it('Rerranges the deck so that no two cards remain in sequence', function() {
       let deck = new Deck();
       deck.shuffle();
       expect(deck.getCards()).toHaveNoCardsInSequence();
     });
-    it('Should generate a random outcome', function() {
+    it('Generates a random outcome with each shuffle', function() {
       let deck = new Deck();
       let outcomes = [];
       let numberOfRounds = 100;

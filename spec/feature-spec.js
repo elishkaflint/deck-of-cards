@@ -11,7 +11,7 @@ describe("FEATURE TESTS: Game of Cards", function() {
     // As a dealer,
     // So that I can deal a random hand to each player,
     // I want to be able to shuffle the cards so no two cards are still in sequence
-    it('The pack of cards can be shuffled', function() {
+    it('The pack of cards can be shuffled so that no cards remain in sequence', function() {
       let game = new Game();
       game.cards.shuffle();
       expect(game.getCards()).toHaveNoCardsInSequence();
