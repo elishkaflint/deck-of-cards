@@ -1,4 +1,4 @@
-describe("UNIT TESTS: Deck of Cards", function() {
+describe("UNIT TESTS: Deck", function() {
 
   it('Initializes with a brand new deck of cards', function() {
     let deck = new Deck();
