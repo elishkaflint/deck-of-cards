@@ -3,5 +3,6 @@ function hasNoDuplicateOutcomes(array) {
 }
 
 function uniqueValues(array) {
+  // refactor?
   return array.filter((x, i, a) => a.indexOf(x) == i)
 }
