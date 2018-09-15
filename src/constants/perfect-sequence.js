@@ -1,6 +1,6 @@
-const NEW_PACK_OF_CARDS = createNewPack()
+const PERFECT_SEQUENCE = createNewDeck()
 
-function createNewPack() {
+function createNewDeck() {
   let cards = [];
   const suits = ['Hearts', 'Clubs', 'Spades', 'Diamonds'];
   const numbers = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];

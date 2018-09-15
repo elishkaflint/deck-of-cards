@@ -1,6 +1,6 @@
 class Deck {
   constructor() {
-    this.cards = NEW_PACK_OF_CARDS
+    this.cards = PERFECT_SEQUENCE
   }
 
   getCards() {
