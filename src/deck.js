@@ -8,7 +8,16 @@ class Deck {
   }
 
   shuffle() {
-    this.cards = this.cards.slice(0).reverse();
+    let initialDeck = this.cards.slice(0);
+    let shuffledDeck = []
+
+    while (initialDeck.length > 0) {
+      var position = Math.floor(Math.random() * initialDeck.length)
+      shuffledDeck.push(initialDeck[position])
+      initialDeck.splice(position,1)
+    }
+
+    this.cards = shuffledDeck;
   }
 
 }
