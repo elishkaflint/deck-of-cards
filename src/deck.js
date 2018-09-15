@@ -8,6 +8,7 @@ class Deck {
   }
 
   shuffle() {
+    this.cards = this.cards.slice(0).reverse();
   }
 
 }
