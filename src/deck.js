@@ -1,3 +1,5 @@
+// Deck is responsible for holding and shuffling cards
+
 class Deck {
   constructor() {
     this.cards = PERFECT_SEQUENCE
