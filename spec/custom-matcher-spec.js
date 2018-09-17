@@ -3,8 +3,8 @@ describe("UNIT TESTS: Custom Matchers", function() {
   describe('#hasNoConsecutiveCards', function() {
     it('Returns true if no two elements are in original sequence', function() {
       let originalArray = [1,2,3,4,5]
-      let arrayWithSequentialElements = [1,3,4,5,2]
-      let arrayWithoutSequentialElements = [1,3,2,5,4]
+      let arrayWithSequentialElements = [[1,3,4,5,2],[1,3,2,5,4]]
+      let arrayWithoutSequentialElements = [[1,3,2,5,4],[1,3,2,5,4]]
       expect(hasNoConsecutiveCards(originalArray, arrayWithSequentialElements)).toBe(false);
       expect(hasNoConsecutiveCards(originalArray, arrayWithoutSequentialElements)).toBe(true);
     });
@@ -12,10 +12,10 @@ describe("UNIT TESTS: Custom Matchers", function() {
 
   describe('#hasNoDuplicates', function() {
     it('Returns true if no two elements are repeated', function() {
-      let arrayWithDuplicates = [1,1,3,4,5]
-      let arrayWithoutDuplicates = [1,2,3,4,5]
-      expect(hasNoDuplicates(arrayWithDuplicates)).toBe(false);
-      expect(hasNoDuplicates(arrayWithoutDuplicates)).toBe(true);
+      let arraysWithDuplicates = [1,1,3,4,5]
+      let arraysWithoutDuplicates = [1,2,3,4,5]
+      expect(hasNoDuplicates(arraysWithDuplicates)).toBe(false);
+      expect(hasNoDuplicates(arraysWithoutDuplicates)).toBe(true);
     });
   });
 

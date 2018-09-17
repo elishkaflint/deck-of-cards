@@ -41,8 +41,13 @@ describe("FEATURE TESTS: Game of Cards", function() {
   // So that I can deal a random hand to each player,
   // I want to be able to shuffle the cards so no two cards are still in sequence
   it('The pack of cards can be shuffled so that no cards remain in sequence', function() {
-    game.shuffle();
-    expect(game.getCards()).toHaveNoConsecutiveCards();
+    let shuffles = [];
+    let numberOfCycles = 50;
+    for (let i = 0; i < numberOfCycles; i++){
+      game.shuffle();
+      shuffles.push(game.getCards())
+    }
+    expect(shuffles).toHaveNoConsecutiveCards();
   });
 
   // As a dealer,

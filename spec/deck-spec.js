@@ -41,8 +41,8 @@ describe("UNIT TESTS: Deck", function() {
     })
     it('Generates a random outcome with each shuffle', function() {
       let outcomes = [];
-      let numberOfRounds = 3;
-      for( i = 0; i < numberOfRounds; i++){
+      let numberOfCycles = 3;
+      for( i = 0; i < numberOfCycles; i++){
         deck.shuffle();
         outcomes.push(deck.getCards().join(","))
       }
