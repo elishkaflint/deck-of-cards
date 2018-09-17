@@ -14,8 +14,6 @@ class Deck {
     let shuffledDeck = []
     while (initialDeck.length > 0) {
       let position = Math.floor(Math.random() * initialDeck.length)
-      console.log(initialDeck)
-      console.log(initialDeck[position])
       shuffledDeck.push(initialDeck[position])
       initialDeck.splice(position,1)
     }

@@ -43,7 +43,7 @@ describe("UNIT TESTS: Deck", function() {
     });
     it('Outputs a deck of 52 cards', function() {
       deck.shuffle();
-      expect(deck.cards.length).toEqual(52);
+      expect(deck.cards.length).toEqual(PERFECT_SEQUENCE.length);
     });
     it ('Outputs unique cards only', function() {
       deck.shuffle();
