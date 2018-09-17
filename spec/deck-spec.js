@@ -35,15 +35,29 @@ describe("UNIT TESTS: Deck", function() {
   });
 
   describe('#shuffle', function() {
+    beforeEach(function() {
+      let deck = new Deck();
+    })
+
     it('Rerranges the deck so that no two cards remain in sequence', function() {
       let deck = new Deck();
       deck.shuffle();
       expect(deck.getCards()).toHaveNoCardsInSequence();
     });
+    it('Outputs a deck of 52 cards', function() {
+      let deck = new Deck();
+      deck.shuffle();
+      expect(deck.cards.length).toEqual(52);
+    });
+    it ('Output unique cards only', function() {
+      let deck = new Deck();
+      deck.shuffle();
+      expect(deck.cards).toHaveNoDuplicateOutcomes();
+    })
     it('Generates a random outcome with each shuffle', function() {
       let deck = new Deck();
       let outcomes = [];
-      let numberOfRounds = 2;
+      let numberOfRounds = 3;
       for( i = 0; i < numberOfRounds; i++){
         deck.shuffle();
         outcomes.push(deck.getCards().join(","))
