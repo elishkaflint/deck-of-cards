@@ -10,17 +10,15 @@ class Deck {
   }
 
   shuffle() {
-    let initialDeck = this.cards.slice(0);
+    let initialDeck = this.cards.slice();
     let shuffledDeck = []
 
     let position = Math.floor(Math.random() * initialDeck.length)
     shuffledDeck.push(initialDeck[position])
     initialDeck.splice(position, 1)
 
-    console.log(initialDeck)
-    console.log(shuffledDeck)
 
-    // while (shuffledDeck.length <= PERFECT_SEQUENCE.length) {
+    // while (shuffledDeck.length < 3) {
     //   let position = Math.floor(Math.random() * initialDeck.length)
     //   let randomCard = initialDeck[position]
     //   let index = PERFECT_SEQUENCE.indexOf(randomCard)
@@ -30,6 +28,7 @@ class Deck {
     //     initialDeck.splice(position,1);
     //   }
     // }
+
 
   }
 
