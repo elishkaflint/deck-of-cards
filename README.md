@@ -8,6 +8,50 @@ An application to build a deck of cards which can be shuffled and dealt. I reall
 
 ### USING THE APPLICATION
 
+Create a game:
+
+```
+> let game = new Game()
+
+> game.getCards()
+
+  ["Ace of Hearts", "2 of Hearts", "3 of Hearts", "4 of Hearts", "5 of Hearts",
+  "6 of Hearts", "7 of Hearts", "8 of Hearts", "9 of Hearts", "10 of Hearts",
+  "Jack of Hearts", "Queen of Hearts", "King of Hearts", "Ace of Clubs",
+  "2 of Clubs", "3 of Clubs", "4 of Clubs", "5 of Clubs", "6 of Clubs",
+  "7 of Clubs", "8 of Clubs", "9 of Clubs", "10 of Clubs", "Jack of Clubs",
+  "Queen of Clubs", "King of Clubs", "Ace of Spades", "2 of Spades",
+  "3 of Spades", "4 of Spades", "5 of Spades", "6 of Spades", "7 of Spades",
+  "8 of Spades", "9 of Spades", "10 of Spades", "Jack of Spades",
+  "Queen of Spades", "King of Spades", "Ace of Diamonds", "2 of Diamonds",
+  "3 of Diamonds", "4 of Diamonds", "5 of Diamonds", "6 of Diamonds",
+  "7 of Diamonds", "8 of Diamonds", "9 of Diamonds", "10 of Diamonds",
+  "Jack of Diamonds", "Queen of Diamonds", "King of Diamonds"]
+
+```
+
+Shuffle cards:
+
+```
+> game.shuffle()
+
+> game.getCards()
+
+  ["Ace of Hearts", "2 of Hearts", "3 of Hearts", "4 of Hearts", "5 of Hearts",
+  "6 of Hearts", "7 of Hearts", "8 of Hearts", "9 of Hearts", "10 of Hearts",
+  "Jack of Hearts", "Queen of Hearts", "King of Hearts", "Ace of Clubs",
+  "2 of Clubs", "3 of Clubs", "4 of Clubs", "5 of Clubs", "6 of Clubs",
+  "7 of Clubs", "8 of Clubs", "9 of Clubs", "10 of Clubs", "Jack of Clubs",
+  "Queen of Clubs", "King of Clubs", "Ace of Spades", "2 of Spades",
+  "3 of Spades", "4 of Spades", "5 of Spades", "6 of Spades", "7 of Spades",
+  "8 of Spades", "9 of Spades", "10 of Spades", "Jack of Spades",
+  "Queen of Spades", "King of Spades", "Ace of Diamonds", "2 of Diamonds",
+  "3 of Diamonds", "4 of Diamonds", "5 of Diamonds", "6 of Diamonds",
+  "7 of Diamonds", "8 of Diamonds", "9 of Diamonds", "10 of Diamonds",
+  "Jack of Diamonds", "Queen of Diamonds", "King of Diamonds"]
+
+```
+
 ### RUNNING THE TEST SUITE
 
 ### CHOICE OF TECHNOLOGY
@@ -59,9 +103,10 @@ I was really pleased to learn some new git techniques while working on this proj
 I chose to create some constants in my code to hold the perfect sequence, number of players and number of cards per hand (see Constants folder). This approach means that any of these values can be altered without breaking the test suite.
 
 ## WHAT I WOULD DO NEXT
-1. Improve the shuffle algorithm
-2. Extract a class to handle each player's cards thereby reducing the responsibility in the game class
-3. Spike the code in PHP (having done a number of PHP tutorials earlier in the week, it's a real shame that I wasn't able to do this in time)
+1. Add Jasmine command line report runner and Istanbul coverage checker (requires re-working of files to export modules)
+2. Improve the shuffle algorithm
+3. Extract a class to handle each player's cards thereby reducing the responsibility in the game class
+4. Spike the code in PHP (having done a number of PHP tutorials earlier in the week, it's a real shame that I wasn't able to do this in time)
 
 ## USERS STORIES
 ```
