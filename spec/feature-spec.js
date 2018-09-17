@@ -50,7 +50,7 @@ describe("FEATURE TESTS: Game of Cards", function() {
   it('A hand of cards can be dealt to a given number of players', function() {
     let game = new Game();
     game.deal();
-    expect(game.hands).toHaveCorrectHand();
+    expect(game.playerHands).toHaveCorrectHand();
   });
 
 });
