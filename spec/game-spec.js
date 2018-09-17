@@ -28,6 +28,14 @@ describe("UNIT TESTS: Game", function() {
     });
   });
 
+  describe('#addPlayer', function() {
+    it('Creates a new player', function() {
+      let game = new Game(dummyDeck);
+      game.addPlayer('dummyPlayer');
+      expect(game.players).toContain('dummyPlayer')
+    })
+  })
+
   describe('#deal', function() {
     it('deals cards to the players', function() {
       class dummyDeck {
