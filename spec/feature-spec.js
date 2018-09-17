@@ -49,9 +49,8 @@ describe("FEATURE TESTS: Game of Cards", function() {
   // I want to be able to deal out 7 cards to 4 players
   it('A hand of cards can be dealt to a given number of players', function() {
     let game = new Game();
-    game.shuffle();
     game.deal();
-    expect(game.players).toHaveCorrectHand();
+    expect(game.hands).toHaveCorrectHand();
   });
 
 });
