@@ -2,10 +2,10 @@ describe("FEATURE TESTS: Game of Cards", function() {
 
   beforeEach(function() {
     jasmine.addMatchers({
-      toHaveNoCardsInSequence: function(){
+      toHaveNoConsecutiveCards: function(){
         return {
           compare: function(object){
-            var result = { pass: hasNoSequentialElements(PERFECT_SEQUENCE, object) };
+            var result = { pass: hasNoConsecutiveCards(PERFECT_SEQUENCE, object) };
             if(!result.pass){
               result.message = 'Expected the deck to have no sequential elements';
             }
@@ -41,7 +41,7 @@ describe("FEATURE TESTS: Game of Cards", function() {
   it('The pack of cards can be shuffled so that no cards remain in sequence', function() {
     let game = new Game();
     game.shuffle();
-    expect(game.getCards()).toHaveNoCardsInSequence();
+    expect(game.getCards()).toHaveNoConsecutiveCards();
   });
 
   // As a player,

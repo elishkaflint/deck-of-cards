@@ -2,10 +2,10 @@ describe("UNIT TESTS: Deck", function() {
 
   beforeEach(function() {
     jasmine.addMatchers({
-      toHaveNoCardsInSequence: function(){
+      toHaveNoConsecutiveCards: function(){
         return {
           compare: function(object){
-            var result = { pass: hasNoSequentialElements(PERFECT_SEQUENCE, object) };
+            var result = { pass: hasNoConsecutiveCards(PERFECT_SEQUENCE, object) };
             if(!result.pass){
               result.message = 'Expected the deck to have no sequential elements';
             }
@@ -38,7 +38,7 @@ describe("UNIT TESTS: Deck", function() {
     it('Rerranges the deck so that no two cards remain in sequence', function() {
       let deck = new Deck();
       deck.shuffle();
-      expect(deck.getCards()).toHaveNoCardsInSequence();
+      expect(deck.getCards()).toHaveNoConsecutiveCards();
     });
     it('Outputs a deck of 52 cards', function() {
       let deck = new Deck();
