@@ -6,3 +6,5 @@ describe("UNIT TESTS: Player", function() {
       expect(player.hand).toEqual([]);
     });
   });
+
+});
