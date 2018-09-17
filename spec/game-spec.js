@@ -1,47 +1,45 @@
-describe("UNIT TESTS: Game", function() {
-
-  beforeEach(function() {
+describe('UNIT TESTS: Game', () => {
+  beforeEach(() => {
     jasmine.addMatchers({
-      toHaveCorrectHand: function(){
+      toHaveCorrectHand() {
         return {
-          compare: function(object){
-            var result = { pass: hasCorrectCards(object, DEFAULT_NUMBER_OF_CARDS, DEFAULT_NUMBER_OF_PLAYERS) };
-            if(!result.pass){
+          compare(object) {
+            const result = { pass: hasCorrectCards(object, DEFAULT_NUMBER_OF_CARDS, DEFAULT_NUMBER_OF_PLAYERS) };
+            if (!result.pass) {
               result.message = 'Expected players to have the right number of cards';
             }
             return result;
-          }
-        }
-      }
+          },
+        };
+      },
     });
   });
 
-  describe('#new', function() {
-    it('Initializes with a brand new deck of cards', function() {
+  describe('#new', () => {
+    it('Initializes with a brand new deck of cards', () => {
       class dummyDeck {
         constructor() {
-          this.cards = 'cards'
+          this.cards = 'cards';
         }
       }
-      let game = new Game(dummyDeck);
+      const game = new Game(dummyDeck);
       expect(game.getCards()).toEqual('cards');
     });
   });
 
-  describe('#deal', function() {
-    it('deals cards to the players', function() {
+  describe('#deal', () => {
+    it('deals cards to the players', () => {
       class dummyDeck {
         constructor() {
           this.cards = [];
-            for (var i = 1; i <= 52; i++) {
-              this.cards.push(i)
-            }
+          for (let i = 1; i <= 52; i++) {
+            this.cards.push(i);
           }
         }
-      let game = new Game(dummyDeck);
-      game.deal()
+      }
+      const game = new Game(dummyDeck);
+      game.deal();
       expect(game.playerHands).toHaveCorrectHand();
     });
   });
-
 });

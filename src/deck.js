@@ -2,7 +2,7 @@
 
 class Deck {
   constructor() {
-    this.cards = PERFECT_SEQUENCE
+    this.cards = PERFECT_SEQUENCE;
   }
 
   getCards() {
@@ -10,14 +10,13 @@ class Deck {
   }
 
   shuffle() {
-    let initialDeck = this.cards.slice(0);
-    let shuffledDeck = []
+    const initialDeck = this.cards.slice(0);
+    const shuffledDeck = [];
     while (initialDeck.length > 0) {
-      let position = Math.floor(Math.random() * initialDeck.length)
-      shuffledDeck.push(initialDeck[position])
-      initialDeck.splice(position,1)
+      const position = Math.floor(Math.random() * initialDeck.length);
+      shuffledDeck.push(initialDeck[position]);
+      initialDeck.splice(position, 1);
     }
     this.cards = shuffledDeck;
   }
-
 }

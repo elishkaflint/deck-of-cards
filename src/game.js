@@ -3,7 +3,7 @@
 class Game {
   constructor(deck = Deck) {
     this.deck = new deck();
-    this.playerHands = []
+    this.playerHands = [];
   }
 
   getCards() {
@@ -16,17 +16,16 @@ class Game {
 
   deal() {
     this.createPlayers();
-    for (var i = 0; i < DEFAULT_NUMBER_OF_CARDS; i++) {
-      for (var j = 0; j < DEFAULT_NUMBER_OF_PLAYERS; j++) {
-        this.playerHands[j][i] = this.getCards().shift()
+    for (let i = 0; i < DEFAULT_NUMBER_OF_CARDS; i++) {
+      for (let j = 0; j < DEFAULT_NUMBER_OF_PLAYERS; j++) {
+        this.playerHands[j][i] = this.getCards().shift();
       }
     }
   }
 
   createPlayers() {
-    for (var i = 1; i <= DEFAULT_NUMBER_OF_PLAYERS; i++) {
+    for (let i = 1; i <= DEFAULT_NUMBER_OF_PLAYERS; i++) {
       this.playerHands.push([]);
     }
   }
-
 }
