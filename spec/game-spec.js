@@ -28,11 +28,21 @@ describe("UNIT TESTS: Game", function() {
     });
   });
 
-  describe('#addPlayer', function() {
-    it('Creates a new player', function() {
+  describe('#addPlayers', function() {
+    it('Creates new players', function() {
+      class dummyDeck {
+        constructor() {
+          this.cards = 'cards'
+        }
+      }
+      class dummyPlayer {
+        constructor() {
+          this.cards = 'cards'
+        }
+      }
       let game = new Game(dummyDeck);
-      game.addPlayer('dummyPlayer');
-      expect(game.players).toContain('dummyPlayer')
+      game.addPlayers(dummyPlayer);
+      expect(game.players.length).toEqual(DEFAULT_NUMBER_OF_PLAYERS)
     })
   })
 

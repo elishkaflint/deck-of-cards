@@ -3,11 +3,19 @@
 class Game {
   constructor(deck = Deck) {
     this.deck = new deck();
-    this.playerHands = []
+    this.players = this.addPlayers();
   }
 
   getCards() {
     return this.deck.cards;
+  }
+
+  addPlayers(player = Player) {
+    let players = []
+    for (var i = 1; i <= DEFAULT_NUMBER_OF_PLAYERS; i++) {
+      players.push(new player());
+    }
+    return players
   }
 
   shuffle() {
@@ -15,18 +23,12 @@ class Game {
   }
 
   deal() {
-    this.createPlayers();
-    for (var i = 0; i < DEFAULT_NUMBER_OF_CARDS; i++) {
-      for (var j = 0; j < DEFAULT_NUMBER_OF_PLAYERS; j++) {
-        this.playerHands[j][i] = this.getCards().shift()
-      }
-    }
-  }
-
-  createPlayers() {
-    for (var i = 1; i <= DEFAULT_NUMBER_OF_PLAYERS; i++) {
-      this.playerHands.push([]);
-    }
+    // this.createPlayers();
+    // for (var i = 0; i < DEFAULT_NUMBER_OF_CARDS; i++) {
+    //   for (var j = 0; j < DEFAULT_NUMBER_OF_PLAYERS; j++) {
+    //     this.playerHands[j][i] = this.getCards().shift()
+    //   }
+    // }
   }
 
 }
