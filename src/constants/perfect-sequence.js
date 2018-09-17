@@ -1,6 +1,4 @@
 const PERFECT_SEQUENCE = createNewDeck()
-const DEFAULT_NUMBER_OF_PLAYERS = 4
-const DEFAULT_NUMBER_OF_CARDS = 7
 
 function createNewDeck() {
   let cards = [];
