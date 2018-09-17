@@ -1,4 +1,4 @@
-function hasNoDuplicateOutcomes(array) {
+function hasNoDuplicates(array) {
   return array.length === uniqueValues(array).length
 }
 

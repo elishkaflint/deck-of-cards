@@ -10,12 +10,12 @@ describe("UNIT TESTS: Custom Matchers", function() {
     });
   });
 
-  describe('#hasNoDuplicateOutcomes', function() {
+  describe('#hasNoDuplicates', function() {
     it('Returns true if no two elements are repeated', function() {
       let arrayWithDuplicates = [1,1,3,4,5]
       let arrayWithoutDuplicates = [1,2,3,4,5]
-      expect(hasNoDuplicateOutcomes(arrayWithDuplicates)).toBe(false);
-      expect(hasNoDuplicateOutcomes(arrayWithoutDuplicates)).toBe(true);
+      expect(hasNoDuplicates(arrayWithDuplicates)).toBe(false);
+      expect(hasNoDuplicates(arrayWithoutDuplicates)).toBe(true);
     });
   });
 

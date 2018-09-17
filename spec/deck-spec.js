@@ -13,10 +13,10 @@ describe("UNIT TESTS: Deck", function() {
           }
         }
       },
-      toHaveNoDuplicateOutcomes: function(){
+      toHaveNoDuplicates: function(){
         return {
           compare: function(object){
-            var result = { pass: hasNoDuplicateOutcomes(object) };
+            var result = { pass: hasNoDuplicates(object) };
             if(!result.pass){
               result.message = 'Expected the deck to have no duplicate outcomes';
             }
@@ -35,10 +35,6 @@ describe("UNIT TESTS: Deck", function() {
   });
 
   describe('#shuffle', function() {
-    beforeEach(function() {
-      let deck = new Deck();
-    })
-
     it('Rerranges the deck so that no two cards remain in sequence', function() {
       let deck = new Deck();
       deck.shuffle();
@@ -49,10 +45,10 @@ describe("UNIT TESTS: Deck", function() {
       deck.shuffle();
       expect(deck.cards.length).toEqual(52);
     });
-    it ('Output unique cards only', function() {
+    it ('Outputs unique cards only', function() {
       let deck = new Deck();
       deck.shuffle();
-      expect(deck.cards).toHaveNoDuplicateOutcomes();
+      expect(deck.cards).toHaveNoDuplicates();
     })
     it('Generates a random outcome with each shuffle', function() {
       let deck = new Deck();
@@ -62,7 +58,7 @@ describe("UNIT TESTS: Deck", function() {
         deck.shuffle();
         outcomes.push(deck.getCards().join(","))
       }
-      expect(outcomes).toHaveNoDuplicateOutcomes();
+      expect(outcomes).toHaveNoDuplicates();
     });
   });
 
