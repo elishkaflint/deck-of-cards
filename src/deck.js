@@ -10,14 +10,21 @@ class Deck {
   }
 
   shuffle() {
-    let initialDeck = this.cards.slice();
+    let initialDeck = this.cards.slice(0);
     let shuffledDeck = []
+    while (initialDeck.length > 0) {
+      let position = Math.floor(Math.random() * initialDeck.length)
+      shuffledDeck.push(initialDeck[position])
+      initialDeck.splice(position,1)
+    }
+    this.cards = shuffledDeck;
 
-    let position = Math.floor(Math.random() * initialDeck.length)
-    shuffledDeck.push(initialDeck[position])
-    initialDeck.splice(position, 1)
-
-
+    // Not yet working
+    // let initialDeck = this.cards.slice(0);
+    // let shuffledDeck = []
+    // let position = Math.floor(Math.random() * initialDeck.length)
+    // shuffledDeck.push(initialDeck[position])
+    // initialDeck.splice(position, 1)
     // while (shuffledDeck.length < 3) {
     //   let position = Math.floor(Math.random() * initialDeck.length)
     //   let randomCard = initialDeck[position]
@@ -28,19 +35,6 @@ class Deck {
     //     initialDeck.splice(position,1);
     //   }
     // }
-
-
   }
-
-
-
-      // let initialDeck = this.cards.slice(0);
-      // let shuffledDeck = []
-      //
-      //   shuffledDeck.push(initialDeck[position])
-      //   initialDeck.splice(position,1)
-      // }
-      // this.cards = shuffledDeck;
-
 
 }
