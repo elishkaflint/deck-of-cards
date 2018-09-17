@@ -25,8 +25,8 @@ describe("UNIT TESTS: Custom Matchers", function() {
       let requiredNumberOfCards = 3
       let correctHands = [['card', 'card', 'card'],['card', 'card', 'card']]
       let incorrectHands = [['card', 'card'],['card', 'card']]
-      expect(hasCorrectCards(incorrectHands,requiredNumberOfCards, requiredNumberOfPlayers)).toBe(false)
-      expect(hasCorrectCards(correctHands,requiredNumberOfCards, requiredNumberOfPlayers)).toBe(true)
+      expect(hasCorrectCards(incorrectHands, requiredNumberOfCards, requiredNumberOfPlayers)).toBe(false)
+      expect(hasCorrectCards(correctHands, requiredNumberOfCards, requiredNumberOfPlayers)).toBe(true)
     });
   });
 
