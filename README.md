@@ -144,7 +144,7 @@ I chose to create some constants in my code to hold the perfect sequence, number
 5. Remove some tests which are testing state as opposed to behaviour (particularly initialization functions)
 6. Make more use of Jasmine spies to refactor test mocks
 
-## USERS STORIES
+## USER STORIES
 ```
 As a dealer,
 So that I can set up a game of cards,
