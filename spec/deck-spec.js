@@ -5,17 +5,6 @@ describe("UNIT TESTS: Deck", function() {
   beforeEach(function() {
     deck = new Deck()
     jasmine.addMatchers({
-      toHaveNoConsecutiveCards: function(){
-        return {
-          compare: function(object){
-            var result = { pass: hasNoConsecutiveCards(PERFECT_SEQUENCE, object) };
-            if(!result.pass){
-              result.message = 'Expected the deck to have no consecutive cards';
-            }
-            return result;
-          }
-        }
-      },
       toHaveNoDuplicates: function(){
         return {
           compare: function(object){
@@ -37,21 +26,22 @@ describe("UNIT TESTS: Deck", function() {
   });
 
   describe('#shuffle', function() {
-    it('Rerranges the deck so that no two cards remain in sequence', function() {
+    it('Uses a random seed 52 times to create a random shuffle', function() {
+      spyOn(Math, "random")
       deck.shuffle();
-      expect(deck.getCards()).toHaveNoConsecutiveCards();
+      expect(Math.random.calls.count()).toEqual(PERFECT_SEQUENCE.length)
     });
     it('Outputs a deck of 52 cards', function() {
       deck.shuffle();
       expect(deck.cards.length).toEqual(PERFECT_SEQUENCE.length);
     });
-    it ('Outputs unique cards only', function() {
+    it('Outputs unique cards only', function() {
       deck.shuffle();
       expect(deck.cards).toHaveNoDuplicates();
     })
     it('Generates a random outcome with each shuffle', function() {
       let outcomes = [];
-      let numberOfRounds = 1;
+      let numberOfRounds = 3;
       for( i = 0; i < numberOfRounds; i++){
         deck.shuffle();
         outcomes.push(deck.getCards().join(","))
