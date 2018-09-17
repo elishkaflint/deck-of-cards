@@ -7,4 +7,12 @@ describe("UNIT TESTS: Player", function() {
     });
   });
 
+  describe('#add', function() {
+    it('adds a card to the player\'s hand', function() {
+      let player = new Player();
+      player.add('card')
+      expect(player.hand).toContain('card');
+    });
+  });
+
 });
