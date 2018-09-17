@@ -7,7 +7,7 @@ describe("FEATURE TESTS: Game of Cards", function() {
           compare: function(object){
             var result = { pass: hasNoConsecutiveCards(PERFECT_SEQUENCE, object) };
             if(!result.pass){
-              result.message = 'Expected the deck to have no sequential elements';
+              result.message = 'Expected the deck to have no consecutive cards';
             }
             return result;
           }
