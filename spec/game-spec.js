@@ -40,7 +40,7 @@ describe("UNIT TESTS: Game", function() {
         }
       let game = new Game(dummyDeck);
       game.deal()
-      expect(game.playerHands).toHaveCorrectHand();
+      expect(game.hands).toHaveCorrectHand();
     });
   });
 
