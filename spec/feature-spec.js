@@ -12,6 +12,17 @@ describe("FEATURE TESTS: Game of Cards", function() {
             return result;
           }
         }
+      },
+      toHaveCorrectHand: function(){
+        return {
+          compare: function(object){
+            var result = { pass: hasCorrectCards(object, DEFAULT_NUMBER_OF_CARDS, DEFAULT_NUMBER_OF_PLAYERS) };
+            if(!result.pass){
+              result.message = 'Expected players to have the right number of cards';
+            }
+            return result;
+          }
+        }
       }
     });
   });

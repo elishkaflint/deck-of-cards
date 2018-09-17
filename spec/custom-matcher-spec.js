@@ -19,4 +19,15 @@ describe("UNIT TESTS: Custom Matchers", function() {
     });
   });
 
+  describe('#hasCorrectCards', function() {
+    it('Returns true if all players have the right number of cards', function() {
+      let requiredNumberOfPlayers = 2
+      let requiredNumberOfCards = 3
+      let correctHands = [['card', 'card', 'card'],['card', 'card', 'card']]
+      let incorrectHands = [['card', 'card'],['card', 'card']]
+      expect(hasCorrectCards(incorrectHands,requiredNumberOfCards, requiredNumberOfPlayers)).toBe(false)
+      expect(hasCorrectCards(correctHands,requiredNumberOfCards, requiredNumberOfPlayers)).toBe(true)
+    });
+  });
+
 });
