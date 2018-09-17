@@ -45,7 +45,7 @@ describe("FEATURE TESTS: Game of Cards", function() {
     expect(game.getCards()).toHaveNoConsecutiveCards();
   });
 
-  // As a player,
+  // As a dealer,
   // So that I can start the game,
   // I want to be able to deal out 7 cards to 4 players
   it('A hand of cards can be dealt to a given number of players', function() {

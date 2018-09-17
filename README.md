@@ -25,7 +25,7 @@ So that I can deal a random hand to each player,
 I want to be able to shuffle the cards so no two cards are still in sequence
 ```
 ```
-As a player,
+As a dealer,
 So that I can start the game,
 I want to be able to deal out 7 cards to 4 players
 ```
