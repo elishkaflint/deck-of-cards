@@ -37,7 +37,6 @@ describe("UNIT TESTS: Game", function() {
       }
       class dummyPlayer {
         constructor() {
-          this.cards = 'cards'
         }
       }
       let game = new Game(dummyDeck);
@@ -56,7 +55,12 @@ describe("UNIT TESTS: Game", function() {
             }
           }
         }
-      let game = new Game(dummyDeck);
+        class dummyPlayer {
+          constructor() {
+          }
+        // to pass test, dummyPlayer needs an add method
+        }
+      let game = new Game(dummyDeck, dummyPlayer);
       game.deal()
       expect(game.players).toHaveCorrectHand();
     });
