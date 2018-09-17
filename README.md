@@ -142,6 +142,7 @@ I chose to create some constants in my code to hold the perfect sequence, number
 3. Extract a class to handle each player's cards thereby reducing the responsibility in the game class
 4. Spike the code in PHP (having done a number of PHP tutorials earlier in the week, it's a real shame that I wasn't able to do this in time)
 5. Remove some tests which are testing state as opposed to behaviour (particularly initialization functions)
+6. Make more use of Jasmine spies to refactor test mocks
 
 ## USERS STORIES
 ```
