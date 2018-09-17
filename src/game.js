@@ -7,4 +7,8 @@ class Game {
     return this.deck.cards;
   }
 
+  shuffle() {
+    this.deck.shuffle();
+  }
+
 }

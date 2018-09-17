@@ -29,7 +29,7 @@ describe("FEATURE TESTS: Game of Cards", function() {
     // I want to be able to shuffle the cards so no two cards are still in sequence
     it('The pack of cards can be shuffled so that no cards remain in sequence', function() {
       let game = new Game();
-      game.deck.shuffle();
+      game.shuffle();
       expect(game.getCards()).toHaveNoCardsInSequence();
     });
 
