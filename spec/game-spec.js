@@ -58,7 +58,7 @@ describe("UNIT TESTS: Game", function() {
         }
       let game = new Game(dummyDeck);
       game.deal()
-      expect(game.hands).toHaveCorrectHand();
+      expect(game.players).toHaveCorrectHand();
     });
   });
 
