@@ -1,0 +1,22 @@
+{
+  "name": "deck-of-cards",
+  "version": "1.0.0",
+  "description": "## MY OBJECTIVES FOR THIS PROJECT 1. Showcase my TDD and OOP capability 2. Gain an introductory understanding of PHP 3. Use the exercise to explore data structures and algorithmic efficiency in more detail",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
