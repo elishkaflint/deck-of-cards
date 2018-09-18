@@ -57,12 +57,16 @@ describe("UNIT TESTS: Game", function() {
         }
         class dummyPlayer {
           constructor() {
+            this.hand = []
           }
-        // to pass test, dummyPlayer needs an add method
+          add(card) {
+            this.hand.push(card);
+          }
         }
-      let game = new Game(dummyDeck, dummyPlayer);
-      game.deal()
-      expect(game.players).toHaveCorrectHand();
+        let game = new Game(dummyDeck, dummyPlayer);
+        game.deal()
+        let totalCards = game.players.length * game.players[0].hand.length
+        expect(totalCards).toEqual(DEFAULT_NUMBER_OF_PLAYERS * DEFAULT_NUMBER_OF_CARDS);
     });
   });
 

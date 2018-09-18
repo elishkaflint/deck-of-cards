@@ -30,7 +30,6 @@ class Game {
       }
     }
     this.players = players;
-    console.log(this.players)
   }
 
 }
