@@ -27,8 +27,25 @@ describe('UNIT TESTS: Game', () => {
     });
   });
 
-  describe('#deal', () => {
-    it('deals cards to the players', () => {
+  describe('#addPlayers', function() {
+    it('Creates new players', function() {
+      class dummyDeck {
+        constructor() {
+          this.cards = 'cards'
+        }
+      }
+      class dummyPlayer {
+        constructor() {
+        }
+      }
+      let game = new Game(dummyDeck);
+      game.addPlayers(dummyPlayer);
+      expect(game.players.length).toEqual(DEFAULT_NUMBER_OF_PLAYERS)
+    })
+  })
+
+  describe('#deal', function() {
+    it('deals cards to the players', function() {
       class dummyDeck {
         constructor() {
           this.cards = [];
@@ -36,10 +53,18 @@ describe('UNIT TESTS: Game', () => {
             this.cards.push(i);
           }
         }
-      }
-      const game = new Game(dummyDeck);
-      game.deal();
-      expect(game.playerHands).toHaveCorrectHand();
+        class dummyPlayer {
+          constructor() {
+            this.hand = []
+          }
+          add(card) {
+            this.hand.push(card);
+          }
+        }
+        let game = new Game(dummyDeck, dummyPlayer);
+        game.deal()
+        let totalCards = game.players.length * game.players[0].hand.length
+        expect(totalCards).toEqual(DEFAULT_NUMBER_OF_PLAYERS * DEFAULT_NUMBER_OF_CARDS);
     });
   });
 });
