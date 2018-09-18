@@ -4,7 +4,8 @@ class Player {
   constructor() {
     this.hand = [];
   }
+
   add(card) {
-    this.hand.push(card)
+    this.hand.push(card);
   }
 }

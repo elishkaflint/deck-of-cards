@@ -11,19 +11,19 @@ class Game {
   }
 
   getHands() {
-    let hands = []
-    for (let i = 0; i < DEFAULT_NUMBER_OF_PLAYERS; i++){
-      hands.push(this.players[i].hand)
+    const hands = [];
+    for (let i = 0; i < DEFAULT_NUMBER_OF_PLAYERS; i++) {
+      hands.push(this.players[i].hand);
     }
-    return hands
+    return hands;
   }
 
   addPlayers(player) {
-    let players = []
-    for (var i = 1; i <= DEFAULT_NUMBER_OF_PLAYERS; i++) {
+    const players = [];
+    for (let i = 1; i <= DEFAULT_NUMBER_OF_PLAYERS; i++) {
       players.push(new player());
     }
-    return players
+    return players;
   }
 
   shuffle() {
@@ -31,9 +31,9 @@ class Game {
   }
 
   deal() {
-    let players = this.players.slice();
-    for (var i = 0; i < DEFAULT_NUMBER_OF_CARDS; i++) {
-      for (var j = 0; j < DEFAULT_NUMBER_OF_PLAYERS; j++) {
+    const players = this.players.slice();
+    for (let i = 0; i < DEFAULT_NUMBER_OF_CARDS; i++) {
+      for (let j = 0; j < DEFAULT_NUMBER_OF_PLAYERS; j++) {
         players[j].add(this.getCards().shift());
       }
     }

@@ -27,25 +27,25 @@ describe('UNIT TESTS: Game', () => {
     });
   });
 
-  describe('#addPlayers', function() {
-    it('Creates new players', function() {
+  describe('#addPlayers', () => {
+    it('Creates new players', () => {
       class dummyDeck {
         constructor() {
-          this.cards = 'cards'
+          this.cards = 'cards';
         }
       }
       class dummyPlayer {
         constructor() {
         }
       }
-      let game = new Game(dummyDeck);
+      const game = new Game(dummyDeck);
       game.addPlayers(dummyPlayer);
-      expect(game.players.length).toEqual(DEFAULT_NUMBER_OF_PLAYERS)
-    })
-  })
+      expect(game.players.length).toEqual(DEFAULT_NUMBER_OF_PLAYERS);
+    });
+  });
 
-  describe('#deal', function() {
-    it('deals cards to the players', function() {
+  describe('#deal', () => {
+    it('deals cards to the players', () => {
       class dummyDeck {
         constructor() {
           this.cards = [];
@@ -56,15 +56,16 @@ describe('UNIT TESTS: Game', () => {
       }
       class dummyPlayer {
         constructor() {
-          this.hand = []
+          this.hand = [];
         }
+
         add(card) {
           this.hand.push(card);
         }
       }
-      let game = new Game(dummyDeck, dummyPlayer);
-      game.deal()
-      let totalCards = game.players.length * game.players[0].hand.length
+      const game = new Game(dummyDeck, dummyPlayer);
+      game.deal();
+      const totalCards = game.players.length * game.players[0].hand.length;
       expect(totalCards).toEqual(DEFAULT_NUMBER_OF_PLAYERS * DEFAULT_NUMBER_OF_CARDS);
     });
   });
