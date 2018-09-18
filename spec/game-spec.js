@@ -53,18 +53,19 @@ describe('UNIT TESTS: Game', () => {
             this.cards.push(i);
           }
         }
-        class dummyPlayer {
-          constructor() {
-            this.hand = []
-          }
-          add(card) {
-            this.hand.push(card);
-          }
+      }
+      class dummyPlayer {
+        constructor() {
+          this.hand = []
         }
-        let game = new Game(dummyDeck, dummyPlayer);
-        game.deal()
-        let totalCards = game.players.length * game.players[0].hand.length
-        expect(totalCards).toEqual(DEFAULT_NUMBER_OF_PLAYERS * DEFAULT_NUMBER_OF_CARDS);
+        add(card) {
+          this.hand.push(card);
+        }
+      }
+      let game = new Game(dummyDeck, dummyPlayer);
+      game.deal()
+      let totalCards = game.players.length * game.players[0].hand.length
+      expect(totalCards).toEqual(DEFAULT_NUMBER_OF_PLAYERS * DEFAULT_NUMBER_OF_CARDS);
     });
   });
 });

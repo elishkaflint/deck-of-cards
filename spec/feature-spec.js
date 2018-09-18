@@ -15,7 +15,7 @@ describe('FEATURE TESTS: Game of Cards', () => {
           },
         };
       },
-      toHaveCorrectHand() {
+      toHaveCorrectCards() {
         return {
           compare(object) {
             const result = { pass: hasCorrectCards(object, DEFAULT_NUMBER_OF_CARDS, DEFAULT_NUMBER_OF_PLAYERS) };
@@ -54,6 +54,6 @@ describe('FEATURE TESTS: Game of Cards', () => {
   // I want to be able to deal out 7 cards to 4 players
   it('A hand of cards can be dealt to a given number of players', () => {
     game.deal();
-    expect(game.playerHands).toHaveCorrectHand();
+    expect(game.getHands()).toHaveCorrectCards();
   });
 });
