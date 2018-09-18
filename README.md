@@ -7,7 +7,7 @@ An application to build a deck of cards which can be shuffled and dealt. I reall
 #### Status at time of submission
 
 - All unit tests consistently passing
-- Feature test to ensure no consecutive cards in a successive shuffles is consistently failing (shuffle algorithm requires additional work)
+- Feature test to ensure no consecutive cards in a successive shuffles is consistently failing (shuffle algorithm requires additional work, I have commented out my most promising attempt for info)
 
 ## TECHNICAL
 
@@ -67,7 +67,7 @@ Deal cards:
 ```
 > game.deal()
 
-> game.playerHands
+> game.getHands()
 
   [["King of Hearts", "7 of Spades", "9 of Diamonds", "10 of Clubs",
   "Ace of Diamonds", "6 of Spades", "5 of Spades"],
@@ -85,9 +85,12 @@ Deal cards:
 ### RUNNING THE TEST SUITE
 
 1. Open SpecRunner.html in the browser (Google Chrome)
-2. Click the Options button on the webpage and disable 'run tests in random order'
 
-High-level exercise requirements are covered principally by the feature tests in ./spec/feature-spec.js
+The high-level requirements specified in the tech test instructions are covered principally by the feature tests in ./spec/feature-spec.js
+
+**Screenshot of the current test suite:**
+
+![test suite](./images/test_suite_screenshot.png)
 
 ### CHOICE OF TECHNOLOGY
 
@@ -127,6 +130,12 @@ I really used this process to drive my development of the program, departing fro
 
 I also wrote my own matchers to ensure that the tech test requirements were met; see the custom-matcher folder and beforeEach blocks where test outcomes are defined.
 
+### Class Structure
+I have tried to stick to SRP and my programme has 3 classes:
+* Game - responsible dealing out cards to players
+* Deck - responsible for holding and shuffling cards
+* Player - responsible for holding a hand of cards
+
 ### The Shuffle Method
 My initial shuffle method met all requirements except that no consecutive cards should remain once shuffled. My code includes an attempt to fix this, however it is commented out as it currently crashes the programme.
 
@@ -137,12 +146,11 @@ I created a new branch for each user story and merged my changes into Master onc
 I chose to create some constants in my code to hold the perfect sequence, number of players and number of cards per hand (see Constants folder). This approach means that any of these values can be altered without breaking the test suite.
 
 ## WHAT I WOULD DO WITH MORE TIME
-1. Add Jasmine command line report runner and Istanbul coverage checker (learnt the hard way that I should have done this first; requires re-working of files to export modules)
+1. Add Jasmine command line report runner and Istanbul coverage checker (learnt the hard way that I should have done this first; requires re-working of files to export modules using Node)
 2. Improve the shuffle algorithm
-3. Extract a class to handle each player's cards thereby reducing the responsibility in the game class
-4. Spike the code in PHP (having done a number of PHP tutorials earlier in the week, it's a real shame that I wasn't able to do this in time)
-5. Remove some tests which are testing state as opposed to behaviour (particularly initialization functions)
-6. Make more use of Jasmine spies to refactor test mocks
+3. Spike the code in PHP (having done a number of PHP tutorials earlier in the week, it's a real shame that I wasn't able to do this in time)
+4. Remove some tests which are testing state as opposed to behaviour (initialization functions?)
+5. Make more use of Jasmine spies to refactor test mocks
 
 ## USER STORIES
 ```
